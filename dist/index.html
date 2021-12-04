@@ -14,7 +14,7 @@
 
 <body class="bg-gray-50">
     <nav class="sticky top-0">
-        <div class="h-20 shadow flex flex-wrap content-center bg-gray-800 static">
+        <div class="h-28 lg:h-20 shadow flex flex-wrap content-center bg-gray-800 static">
             <div class="container text-center">
                 <h1 class="text-3xl font-bold text-white">Home Sales</h1>
                 <div class="text-yellow-500 mt-1">
@@ -159,7 +159,7 @@
                                     </div>
                                     <div></div>
                                     <div>
-                                        <a href="${item.imageUrl}" class="bg-gray-800 text-xs text-white px-3 pb-1 rounded-3xl shadow-md viewBtn hidden">View
+                                        <a href="${item.imageUrl}" class="bg-gray-800 text-xs text-white px-3 pb-1 rounded-3xl shadow-md viewBtn md:hidden">View
                                         </a>
                                     </div>
                                     
@@ -186,11 +186,11 @@
                 type: 'image'
             });
 
-            $('.itemCard').on('mouseenter', function(e) {
-                $(this).find('.viewBtn').removeClass('hidden');
+            $('.itemCard').on('mouseover', function(e) {
+                $(this).find('.viewBtn').removeClass('md:hidden');
             });
             $('.itemCard').on('mouseleave', function(e) {
-                $(this).find('.viewBtn').addClass('hidden');
+                $(this).find('.viewBtn').addClass('md:hidden');
             })
         });
     </script>
