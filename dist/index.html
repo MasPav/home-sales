@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Items Sale</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-gray-50">
+    <nav class="sticky top-0">
+        <div class="h-20 shadow flex flex-wrap content-center bg-gray-800 static">
+            <div class="container text-center">
+                <h1 class="text-3xl font-bold text-white">Home Sales</h1>
+                <div class="text-yellow-500 mt-1">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    <span>0203583644</span>
+                    <span class="mx-2">&#8226;</span>
+                    <span>0269619643</span>
+                    <span class="mx-2">&#8226;</span>
+                    <span>0593220290</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container py-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6" id="items-wrapper"></div>
+        </div>
+    </main>
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Magnific Popup core JS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.js" defer></script>
+    <script defer>
+        // Home store items in json format
+        // Google drive images baseUrl
+        const gDriveImagesBaseUrl = "https://drive.google.com/uc?export=view&id=";
+        let items = [{
+                name: "Dining Set",
+                price: "1000",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1haCnSfPtXocSDObvIGa7VYcngT5sHQnc"
+                ),
+                sold: false,
+            },
+            {
+                name: "L-Shaped Sofa",
+                price: "800",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "12s5yBnq7X4k2wR7Tswf1505FF5RXikOU"
+                ),
+                sold: false,
+            },
+            {
+                name: "Single Couch",
+                price: "300",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1YbYv1mSdcQbXvqYLmNg5Gc2FYC_MxO8Q"
+                ),
+                sold: false,
+            },
+            {
+                name: "TV Stand",
+                price: "350",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1d0NGUFU-AMOHzFPutB_n8BbpdnKt9jDm"
+                ),
+                sold: false,
+            },
+            {
+                name: "Studying Table",
+                price: "450",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1DJfVNUb-rGZhv24m9IcROHhqhtGfp1p2"
+                ),
+                sold: false,
+            },
+            {
+                name: "Single Wardrope",
+                price: "150",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1tOgT9-nH0WxQpnGcPxBBdP-JLnAX8P5Z"
+                ),
+                sold: false,
+            },
+            {
+                name: "Double Wardrope",
+                price: "300",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1BPBf7FtXEwA0PHz8xkbnKTABvIwXk8hP"
+                ),
+                sold: false,
+            },
+            {
+                name: "Microwave",
+                price: "200",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1P9xxoD4jNXGo7l6v4h2gyMHj5aqIHeC0"
+                ),
+                sold: false,
+            },
+            {
+                name: "Kids Drawers",
+                price: "150",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1e2hUJBHFZhCs-0Uru2wg6gKaG0y5Q9cT"
+                ),
+                sold: false,
+            },
+            {
+                name: "Burbay Car Seat",
+                price: "500",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1au83_cmw4ss71oCI8xfQaAkYc2lo0foA"
+                ),
+                sold: false,
+            },
+            {
+                name: "Silver Cross Simplicity Car Seat",
+                price: "300",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1xJXuadHcLM-Nqk-t4WrK_ZVTCpTV5lWS"
+                ),
+                sold: false,
+            },
+            {
+                name: "Shelves",
+                price: "100",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1B9_2Sh7y9-vozlLTEQ3yQm_DKhKohY_G"
+                ),
+                sold: false,
+            },
+        ];
+
+        // home store items added to DOM
+        let itemsInHtml = "";
+        items.forEach(
+            (item) =>
+            (itemsInHtml += `<div class="shadow rounded-md bg-white pt-3 itemCard">
+                    <div class="px-3 md:h-20">
+                            <h4 class="text-xl font-semibold md:truncate ... sm:max-w-xs lg:max-w-lg mb-1" title="${
+                              item.name
+                            }">${item.name}</h4>
+                    <div class="flex justify-between mb-2">
+                                    <div>
+                                            <span class="text-yellow-500 text-sm font-medium ${
+                                              item.sold ? "line-through" : ""
+                                            }">${item.price ? "GHS" : ""} ${
+            item.price
+          }</span>
+                                    </div>
+                                    <div></div>
+                                    <div>
+                                        <a href="${item.imageUrl}" class="bg-gray-800 text-xs text-white px-3 pb-1 rounded-3xl shadow-md viewBtn hidden">View
+                                        </a>
+                                    </div>
+                                    
+                            </div>
+                    </div>
+                    <hr>
+                    <img src="${
+                      item.imageUrl
+                    }" loading="lazy" alt="" onerror="onItemImageError(event)"
+                        class="rounded-b h-80 w-full object-cover">
+                </div>`)
+        );
+        document.getElementById("items-wrapper").innerHTML = itemsInHtml;
+        // function to handle items with their images not loaded
+        const onItemImageError = (event) => {
+            event.target.src =
+                "https://ultraviola.eu/images/com_hikashop/upload/empty_box.png";
+        };
+
+        // Init Magnific Popup with images
+        $(document).ready(function () {
+            $('#items-wrapper').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image'
+            });
+
+            $('.itemCard').on('mouseenter', function(e) {
+                $(this).find('.viewBtn').removeClass('hidden');
+            });
+            $('.itemCard').on('mouseleave', function(e) {
+                $(this).find('.viewBtn').addClass('hidden');
+            })
+        });
+    </script>
+</body>
+
+</html>
