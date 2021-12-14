@@ -43,70 +43,55 @@
         // Google drive images baseUrl
         const gDriveImagesBaseUrl = "https://drive.google.com/uc?export=view&id=";
         let items = [
-            // {
-            //     name: "Dining Set",
-            //     price: "1000",
-            //     imageUrl: gDriveImagesBaseUrl.concat(
-            //         "1haCnSfPtXocSDObvIGa7VYcngT5sHQnc"
-            //     ),
-            //     sold: false,
-            // },
-            {
-                name: "L-Shaped Sofa",
-                price: "800",
+        {
+                name: "Living Room Sofas Full Set",
+                price: "15,000",
                 imageUrl: gDriveImagesBaseUrl.concat(
-                    "12s5yBnq7X4k2wR7Tswf1505FF5RXikOU"
+                    "1nOxVUTqWPDCAeD50utPwqe7UXIMKdM6j"
                 ),
                 sold: false,
             },
-            // {
-            //     name: "Single Couch",
-            //     price: "300",
-            //     imageUrl: gDriveImagesBaseUrl.concat(
-            //         "1YbYv1mSdcQbXvqYLmNg5Gc2FYC_MxO8Q"
-            //     ),
-            //     sold: false,
-            // },
-            // {
-            //     name: "TV Stand",
-            //     price: "350",
-            //     imageUrl: gDriveImagesBaseUrl.concat(
-            //         "1d0NGUFU-AMOHzFPutB_n8BbpdnKt9jDm"
-            //     ),
-            //     sold: false,
-            // },
+        {
+                name: "Brand New 3 in 1 Sofa",
+                price: "5,500",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1eCGzRmv3qKgofCpJ9SZaF6kMg-pBChgx"
+                ),
+                sold: false,
+            },
+            {
+                name: "Brand New Single Sofas(2)",
+                price: "4,500",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1pqutQ2eH7T_jnE5TI0ihmm1Ov9WrKjqE"
+                ),
+                sold: false,
+            },
+        {
+                name: "Apple MacBook Air 2017 8GB Core I5 SSD 256GB",
+                price: "4000",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "1LHxxo2_LrujlzLQsy6_7V_CuFivK9LGs"
+                ),
+                sold: false,
+            },
+            {
+                name: "LG Home Theater System",
+                price: "750",
+                imageUrl: gDriveImagesBaseUrl.concat(
+                    "10KdFNHiUZ0EqGvcwiQ5jLITJH9ogunin"
+                ),
+                sold: false,
+            },
+
             {
                 name: "Collapsible Studying Table",
-                price: "400",
+                price: "350",
                 imageUrl: gDriveImagesBaseUrl.concat(
                     "1DJfVNUb-rGZhv24m9IcROHhqhtGfp1p2"
                 ),
                 sold: false,
             },
-            // {
-            //     name: "Single Wardrope",
-            //     price: "150",
-            //     imageUrl: gDriveImagesBaseUrl.concat(
-            //         "1tOgT9-nH0WxQpnGcPxBBdP-JLnAX8P5Z"
-            //     ),
-            //     sold: false,
-            // },
-            // {
-            //     name: "Double Wardrope",
-            //     price: "300",
-            //     imageUrl: gDriveImagesBaseUrl.concat(
-            //         "1BPBf7FtXEwA0PHz8xkbnKTABvIwXk8hP"
-            //     ),
-            //     sold: false,
-            // },
-            // {
-            //     name: "Microwave",
-            //     price: "200",
-            //     imageUrl: gDriveImagesBaseUrl.concat(
-            //         "1P9xxoD4jNXGo7l6v4h2gyMHj5aqIHeC0"
-            //     ),
-            //     sold: false,
-            // },
             {
                 name: "Kids Drawers",
                 price: "300",
@@ -186,7 +171,6 @@
                 delegate: 'a', // child items selector, by clicking on it popup will open
                 type: 'image'
             });
-
             $('.itemCard').on('mouseover', function(e) {
                 $(this).find('.viewBtn').removeClass('md:hidden');
             });
